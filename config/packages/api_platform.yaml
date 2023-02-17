@@ -1,0 +1,21 @@
+api_platform:
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+    collection:
+        pagination:
+            # enabled_parameter_name: tata #?tata=true pour activé ou ?tata=false pour désactivé la pagination dans url 
+            # page_parameter_name: toto   #on peut mofifier le nom dans url page=1 par toto=2 
+            items_per_page_parameter_name: "count" #remplacer le itemsPerPage=10 par count=10
+    #     pagination:
+    #         enabled: true
+    #         items_per_page: 5
+    defaults:
+        pagination_enabled: false
+        pagination_items_per_page: 5
+        pagination_client_enabled: true         #envoyer dans l'url le parametre ?pagination=true pour activé la pagination elle est désactivée par défaut
+        pagination_client_items_per_page: true  #envoyer dans l'url le paramètre itemsPerPage=10 pour dire qu'il faut afficher 10 éléments par page.
+    
